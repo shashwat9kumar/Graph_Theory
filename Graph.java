@@ -8,7 +8,6 @@ public class Graph {
         graph.get(destination).add(source);
     }
 
-
     public static void main(String args[]){
         int vertex = 5;
         ArrayList<ArrayList<Integer>> graph = new ArrayList<ArrayList<Integer>>(vertex);
