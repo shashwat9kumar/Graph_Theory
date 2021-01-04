@@ -1,7 +1,7 @@
 import java.util.*;
 
 class BFS {
-    static int vertex = 5;
+    static int vertex = 8;
     static boolean visited[] = new boolean[vertex];
     static Queue<Integer> queue = new LinkedList<>();  // queue for BFS
 
@@ -24,6 +24,12 @@ class BFS {
         addEdge(graph, 0, 3);
         addEdge(graph, 2, 3);
         addEdge(graph, 4, 3);
+        addEdge(graph, 4, 5);
+        addEdge(graph, 6, 2);
+        addEdge(graph, 7, 0);
+        addEdge(graph, 7, 6);
+        addEdge(graph, 7, 2);
+        addEdge(graph, 1, 3);
 
         breadthFirstSearch(graph, 0);
     }
