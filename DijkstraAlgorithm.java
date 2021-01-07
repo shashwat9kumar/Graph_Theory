@@ -1,5 +1,7 @@
 import java.util.*;
 
+/// THe shortest Path of each node on a DAG (ordered by toplogogical ordering)
+
 class DijkstraAlgorithm {
     static int vertex = 8;
      
