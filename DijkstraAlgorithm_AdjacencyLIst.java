@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class practice {
+public class DijkstraAlgorithm_AdjacencyLIst {
 
 
     private static final double EPS = 1e-6;
@@ -8,15 +8,16 @@ public class practice {
 
 
     public static class Edge {
-        int to,  cost;
-        public Edge(int to, int cost){
+        int to, from, cost;
+        public Edge(int from, int to, int cost){
             this.to = to;
+            this.from = from;
             this.cost = cost;
         }
     } 
 
     static void addEdge(int from, int to, int cost) {
-        graph.get(from).add(new Edge(to, cost));
+        graph.get(from).add(new Edge(from, to, cost));
     }
 
 
@@ -52,7 +53,7 @@ public class practice {
         Arrays.fill(cost, 2147483641);
         Arrays.fill(visited, false);
         Arrays.fill(previous, -1);
-
+        System.out.println("\n"+ (int)EPS + "\n");
         addEdge(0, 1, 5);
         addEdge(0, 2, 1);
         addEdge(1, 2, 2);
@@ -94,7 +95,7 @@ public class practice {
                 if(visited[e.to]) {
                     continue;
                 }
-                int dist = e.cost + cost[node.id];
+                int dist = e.cost + cost[e.from];
                 if(dist < cost[e.to]) {
                     cost[e.to] = dist;
                     pq.add(new Node(e.to, cost[e.to]));
